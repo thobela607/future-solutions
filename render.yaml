@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: future-solutions
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      # Optional — add these in Render dashboard to enable email
+      # - key: SMTP_HOST
+      # - key: SMTP_PORT
+      # - key: SMTP_USER
+      # - key: SMTP_PASS
+      # - key: CONTACT_EMAIL

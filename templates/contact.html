@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block meta_desc %}Get in touch with Future Solutions — request a quote, ask a question, or speak to a specialist.{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-glow"></div>
+  <div class="container position-relative z-2 text-center">
+    <div class="section-badge mb-3">Get in Touch</div>
+    <h1 class="page-header-title">Contact <span class="text-accent">Us</span></h1>
+    <p class="page-header-sub">Our team is ready to help — reach out and we'll respond within one business day.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- CONTACT INFO -->
+      <div class="col-lg-4">
+        <h3 class="mb-4" style="font-weight: 700;">Let's <span class="text-accent">Talk</span></h3>
+        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+          Whether you need a product quote, technical support, or want to discuss a managed services contract — our specialists are here for you.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <strong>Head Office</strong>
+              <p class="mb-0 small" style="color: var(--text-secondary);">14 Innovation Drive<br>Sandton, Gauteng 2196<br>South Africa</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <strong>Phone</strong>
+              <p class="mb-0 small" style="color: var(--text-secondary);">
+                <a href="tel:+27110000000" class="contact-link">+27 11 000 0000</a><br>
+                <a href="tel:+27800000000" class="contact-link">0800 000 000 (Toll-free)</a>
+              </p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <p class="mb-0 small" style="color: var(--text-secondary);">
+                <a href="mailto:info@futuresolutions.co.za" class="contact-link">info@futuresolutions.co.za</a><br>
+                <a href="mailto:support@futuresolutions.co.za" class="contact-link">support@futuresolutions.co.za</a>
+              </p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <strong>Business Hours</strong>
+              <p class="mb-0 small" style="color: var(--text-secondary);">
+                Mon – Fri: 08:00 – 17:00<br>
+                Saturday: 09:00 – 13:00<br>
+                Sunday &amp; Public Holidays: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="mt-4">
+          <p class="small mb-2" style="color: var(--text-secondary);">Follow Us</p>
+          <div class="social-links d-flex gap-3">
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="col-lg-7 offset-lg-1">
+        <div class="contact-form-card">
+          <h4 class="mb-1" style="font-weight: 700;">Send Us a Message</h4>
+          <p class="mb-4 small" style="color: var(--text-secondary);">All fields marked <span class="text-accent">*</span> are required.</p>
+
+          <form method="POST" action="{{ url_for('contact') }}" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label">Full Name <span class="text-accent">*</span></label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control fs-input"
+                  placeholder="John Smith"
+                  value="{{ form_data.name if form_data else '' }}"
+                  required
+                />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Email Address <span class="text-accent">*</span></label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control fs-input"
+                  placeholder="john@company.co.za"
+                  value="{{ form_data.email if form_data else '' }}"
+                  required
+                />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control fs-input"
+                  placeholder="+27 82 000 0000"
+                  value="{{ form_data.phone if form_data else '' }}"
+                />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Subject <span class="text-accent">*</span></label>
+                <select name="subject" class="form-select fs-input" required>
+                  <option value="" disabled {% if not form_data %}selected{% endif %}>Select a subject</option>
+                  <option value="Product Enquiry" {% if form_data and form_data.subject == 'Product Enquiry' %}selected{% endif %}>Product Enquiry</option>
+                  <option value="Quote Request" {% if form_data and form_data.subject == 'Quote Request' %}selected{% endif %}>Quote Request</option>
+                  <option value="Managed Print Services" {% if form_data and form_data.subject == 'Managed Print Services' %}selected{% endif %}>Managed Print Services</option>
+                  <option value="Technical Support" {% if form_data and form_data.subject == 'Technical Support' %}selected{% endif %}>Technical Support</option>
+                  <option value="Billing" {% if form_data and form_data.subject == 'Billing' %}selected{% endif %}>Billing</option>
+                  <option value="Partnership" {% if form_data and form_data.subject == 'Partnership' %}selected{% endif %}>Partnership</option>
+                  <option value="Other" {% if form_data and form_data.subject == 'Other' %}selected{% endif %}>Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message <span class="text-accent">*</span></label>
+                <textarea
+                  name="message"
+                  class="form-control fs-input"
+                  rows="6"
+                  placeholder="Tell us how we can help you..."
+                  required
+                >{{ form_data.message if form_data else '' }}</textarea>
+              </div>
+              <div class="col-12 mt-2">
+                <button type="submit" class="btn btn-accent btn-lg w-100">
+                  <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-placeholder">
+      <i class="fa-solid fa-map-location-dot fa-3x text-accent mb-3"></i>
+      <h5>14 Innovation Drive, Sandton, Gauteng</h5>
+      <p class="small mb-3" style="color: var(--text-secondary);">Embed your Google Maps iframe here after publishing</p>
+      <a href="https://maps.google.com/?q=Sandton,Gauteng,South+Africa" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm px-4">
+        <i class="fa-solid fa-directions me-2"></i>Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
