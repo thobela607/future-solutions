@@ -67,7 +67,7 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-number, .ps-num').forEach(el => counterObserver.observe(el));
+document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
 
 // Mouse parallax on hero visual
 const heroVisual = document.querySelector('.hero-visual');
