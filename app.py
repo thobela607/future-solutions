@@ -23,6 +23,16 @@ def stationery():
     return render_template('stationery.html')
 
 
+@app.route('/branding')
+def branding():
+    return render_template('branding.html')
+
+
+@app.route('/promotional')
+def promotional():
+    return render_template('promotional.html')
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')

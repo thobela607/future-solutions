@@ -1,4 +1,4 @@
-/* Future Solutions — Main JS */
+/* Future Solutions — Main JS 2.0 */
 
 // Navbar scroll effect
 const nav = document.getElementById('mainNav');
@@ -13,7 +13,7 @@ document.querySelectorAll('.alert').forEach(el => {
   setTimeout(() => bootstrap.Alert.getOrCreateInstance(el).close(), 5000);
 });
 
-// Scroll-reveal animation
+// Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -22,33 +22,37 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
-document.querySelectorAll(
-  '.service-card, .product-card, .feature-pill, .value-card, .av-card, .mv-card, .stat-item, .stat-card, .notebook-card, .branded-item'
-).forEach((el, i) => {
+const revealSelectors = [
+  '.service-card', '.product-card', '.feature-pill', '.value-card',
+  '.av-card', '.mv-card', '.stat-item', '.stat-card', '.notebook-card',
+  '.branded-item', '.bento-card', '.glow-card', '.promo-card',
+  '.tech-item', '.sign-item', '.digital-card', '.event-card',
+  '.process-step', '.branded-item', '.notebook-card'
+].join(', ');
+
+document.querySelectorAll(revealSelectors).forEach((el, i) => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(28px) scale(0.98)';
-  el.style.transition = `opacity 0.55s ease ${i % 4 * 80}ms, transform 0.55s ease ${i % 4 * 80}ms`;
+  el.style.transform = 'translateY(24px) scale(0.98)';
+  el.style.transition = `opacity 0.55s ease ${(i % 5) * 70}ms, transform 0.55s ease ${(i % 5) * 70}ms`;
   revealObserver.observe(el);
 });
 
 // Animated stat counters
 function animateCounter(el) {
-  const text = el.textContent;
-  const match = text.match(/[\d,]+/);
-  if (!match) return;
-  const target = parseInt(match[0].replace(/,/g, ''));
-  const suffix = text.replace(/[\d,]+/, '').trim();
+  const raw = el.textContent;
+  const numMatch = raw.match(/[\d,]+/);
+  if (!numMatch) return;
+  const target = parseInt(numMatch[0].replace(/,/g, ''));
+  const suffix = raw.replace(/[\d,]+/, '').trim();
   const duration = 1800;
   const start = performance.now();
 
   const tick = (now) => {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(eased * target);
-    el.textContent = current.toLocaleString() + suffix;
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 4);
+    el.textContent = Math.round(eased * target).toLocaleString() + (suffix ? ' ' + suffix : '');
     if (progress < 1) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
@@ -63,34 +67,41 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+document.querySelectorAll('.stat-number, .ps-num').forEach(el => counterObserver.observe(el));
 
-// Smooth active nav highlight on scroll (single page sections)
+// Mouse parallax on hero visual
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual) {
+  document.addEventListener('mousemove', (e) => {
+    const dx = (e.clientX / window.innerWidth - 0.5) * 14;
+    const dy = (e.clientY / window.innerHeight - 0.5) * 10;
+    heroVisual.style.transform = `translate(${dx}px, ${dy}px)`;
+  }, { passive: true });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Active category pill highlight on scroll
 const sections = document.querySelectorAll('section[id]');
 if (sections.length) {
-  const navObserver = new IntersectionObserver((entries) => {
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         document.querySelectorAll('.cat-pill').forEach(pill => {
-          pill.classList.toggle(
-            'cat-pill--active',
-            pill.getAttribute('href') === '#' + entry.target.id
-          );
+          const match = pill.getAttribute('href') === '#' + entry.target.id;
+          pill.classList.toggle('cat-pill--accent', match);
         });
       }
     });
   }, { threshold: 0.4 });
-  sections.forEach(s => navObserver.observe(s));
-}
-
-// Subtle mouse parallax on hero visual
-const heroVisual = document.querySelector('.hero-visual');
-if (heroVisual) {
-  document.addEventListener('mousemove', (e) => {
-    const cx = window.innerWidth / 2;
-    const cy = window.innerHeight / 2;
-    const dx = (e.clientX - cx) / cx;
-    const dy = (e.clientY - cy) / cy;
-    heroVisual.style.transform = `translate(${dx * 8}px, ${dy * 6}px)`;
-  }, { passive: true });
+  sections.forEach(s => sectionObserver.observe(s));
 }

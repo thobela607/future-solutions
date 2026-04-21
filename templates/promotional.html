@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+{% block title %}Promotional Materials{% endblock %}
+{% block meta_desc %}Branded promotional products — corporate gifts, event merchandise, branded clothing, tech accessories and gift sets from Future Solutions.{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
+  <div class="container position-relative z-2 text-center">
+    <div class="badge-pill mb-4"><i class="fa-solid fa-gift me-2"></i>Promotional Materials</div>
+    <h1 class="page-header-title">Merchandise That<br><span class="text-gradient-violet">Keeps Working</span></h1>
+    <p class="page-header-sub">Branded items your clients and staff will actually use — keeping your name top of mind long after the moment.</p>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <a href="{{ url_for('contact') }}" class="btn-primary-glow">Request a Quote</a>
+      <a href="#clothing" class="btn-ghost">Browse Categories</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="promo-stat-strip">
+  <div class="container">
+    <div class="promo-stats">
+      <div class="ps-stat">
+        <span class="ps-num stat-number">500<span class="text-accent">+</span></span>
+        <span class="ps-label">Products Available</span>
+      </div>
+      <div class="ps-div"></div>
+      <div class="ps-stat">
+        <span class="ps-num stat-number">7<span class="text-accent"> Days</span></span>
+        <span class="ps-label">Standard Turnaround</span>
+      </div>
+      <div class="ps-div"></div>
+      <div class="ps-stat">
+        <span class="ps-num stat-number">50<span class="text-accent">+</span></span>
+        <span class="ps-label">Min. Order (most items)</span>
+      </div>
+      <div class="ps-div"></div>
+      <div class="ps-stat">
+        <span class="ps-num stat-number">100<span class="text-accent">%</span></span>
+        <span class="ps-label">Branded &amp; Proofed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOTHING -->
+<section class="section-pad" id="clothing">
+  <div class="container">
+    <div class="section-header-inline">
+      <div>
+        <div class="badge-pill mb-2">01 — Branded Clothing</div>
+        <h2 class="section-title">Wear Your <span class="text-gradient-blue">Brand</span></h2>
+        <p class="section-sub mt-2">From everyday workwear to premium corporate gifting — branded apparel that builds team identity and brand visibility.</p>
+      </div>
+      <a href="{{ url_for('contact') }}" class="btn-ghost flex-shrink-0">Get Clothing Quote</a>
+    </div>
+    <div class="row gy-4 mt-3">
+      <div class="col-sm-6 col-lg-3">
+        <div class="promo-card h-100">
+          <div class="promo-img-block promo-img--tshirt">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <div class="promo-body">
+            <h5>T-Shirts &amp; Polo Shirts</h5>
+            <p>Cotton, dri-fit, and premium polo shirts with screen print, embroidery, or heat transfer branding.</p>
+            <div class="promo-tags">
+              <span>Screen Print</span><span>Embroidery</span><span>Bulk Packs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="promo-card h-100">
+          <div class="promo-img-block promo-img--jacket">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div class="promo-body">
+            <h5>Jackets &amp; Hoodies</h5>
+            <p>Softshell, fleece, and padded jackets. Embroidered logo on chest or sleeve — sharp in any weather.</p>
+            <div class="promo-tags">
+              <span>Corporate</span><span>Winter Range</span><span>Unisex Sizes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="promo-card h-100">
+          <div class="promo-img-block promo-img--cap">
+            <i class="fa-solid fa-hat-cowboy-side"></i>
+          </div>
+          <div class="promo-body">
+            <h5>Caps &amp; Beanies</h5>
+            <p>Structured and unstructured caps, golf caps, and branded beanies. 3D puff or flat embroidery.</p>
+            <div class="promo-tags">
+              <span>Adjustable</span><span>3D Embroidery</span><span>Min. 12 units</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="promo-card h-100">
+          <div class="promo-img-block promo-img--apron">
+            <i class="fa-solid fa-vest-patches"></i>
+          </div>
+          <div class="promo-body">
+            <h5>Workwear &amp; Uniforms</h5>
+            <p>Full uniform sets — shirts, trousers, aprons, and hi-vis vests with your logo and employee names.</p>
+            <div class="promo-tags">
+              <span>Hi-Vis Options</span><span>Name Printing</span><span>Fleet Orders</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg-secondary)"/></svg></div>
+
+<!-- CORPORATE GIFTS -->
+<section class="section-pad bg-secondary-section" id="gifts">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="badge-pill mb-3">02 — Corporate Gifts</div>
+      <h2 class="section-title">Gifts They'll <span class="text-gradient-violet">Remember</span></h2>
+      <p class="section-sub mx-auto">Quality branded items that create lasting impressions — ideal for client appreciation, staff rewards, and year-end gifting.</p>
+    </div>
+    <div class="row gy-4">
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--cyan"></div>
+          <div class="gc-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <h5>Mugs &amp; Drinkware</h5>
+          <p>Ceramic, travel, and enamel mugs. Branded water bottles, flasks, and tumblers — used daily, seen daily.</p>
+          <ul class="gc-list">
+            <li>Full-colour wrap print</li>
+            <li>Stainless steel &amp; ceramic</li>
+            <li>Gift box packaging</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--violet"></div>
+          <div class="gc-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <h5>Bags &amp; Backpacks</h5>
+          <p>Tote bags, laptop backpacks, conference satchels, and cooler bags — branded for every occasion.</p>
+          <ul class="gc-list">
+            <li>Eco cotton &amp; non-woven</li>
+            <li>Laptop compartments</li>
+            <li>Screen &amp; embroidery print</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--emerald"></div>
+          <div class="gc-icon"><i class="fa-solid fa-umbrella"></i></div>
+          <h5>Umbrellas</h5>
+          <p>Compact, golf, and walking umbrellas with full panel branding. Auto-open, windproof, and premium finishes.</p>
+          <ul class="gc-list">
+            <li>Full panel print</li>
+            <li>Wind-resistant frames</li>
+            <li>Branded sleeves</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--pink"></div>
+          <div class="gc-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+          <h5>Branded Pens &amp; Sets</h5>
+          <p>Metal, bamboo, and premium pens. Executive writing sets with case — the classic gift done right.</p>
+          <ul class="gc-list">
+            <li>Laser engraving</li>
+            <li>Eco &amp; bamboo options</li>
+            <li>Pen &amp; notebook combos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--cyan"></div>
+          <div class="gc-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h5>Desk Calendars &amp; Diaries</h5>
+          <p>A4 and A5 wall calendars, desk blotter calendars, and branded diaries for the year ahead.</p>
+          <ul class="gc-list">
+            <li>Custom photography</li>
+            <li>Monthly branded messaging</li>
+            <li>Order by October</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="glow-card h-100">
+          <div class="gc-stripe gc-stripe--violet"></div>
+          <div class="gc-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h5>Gift Hampers &amp; Sets</h5>
+          <p>Curated branded gift sets — packed in custom boxes with tissue, ribbon, and a branded card inside.</p>
+          <ul class="gc-list">
+            <li>Fully custom curation</li>
+            <li>Branded outer packaging</li>
+            <li>Delivered nationwide</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider wave-divider--flip"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg-secondary)"/></svg></div>
+
+<!-- TECH ACCESSORIES -->
+<section class="section-pad" id="tech">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+      <div class="col-lg-4">
+        <div class="badge-pill mb-3">03 — Branded Tech</div>
+        <h2 class="section-title">Tech Gifts <span class="text-gradient-emerald">They'll Love</span></h2>
+        <p class="section-sub mt-3">In a digital world, branded tech accessories get picked up, plugged in, and seen constantly. High perceived value, lasting brand exposure.</p>
+        <a href="{{ url_for('contact') }}" class="btn-primary-glow mt-4 d-inline-block">Quote Tech Items</a>
+      </div>
+      <div class="col-lg-7 offset-lg-1">
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-hard-drive"></i></div>
+            <div>
+              <strong>USB Flash Drives</strong>
+              <p>4GB–128GB, custom shapes, metal or plastic — laser engraved or domed print.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-battery-full"></i></div>
+            <div>
+              <strong>Power Banks</strong>
+              <p>5,000–20,000mAh branded power banks. USB-C and wireless charging options.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-headphones"></i></div>
+            <div>
+              <strong>Earbuds &amp; Headphones</strong>
+              <p>Branded TWS earbuds, over-ear headphones — premium gifting with WOW factor.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-computer-mouse"></i></div>
+            <div>
+              <strong>Branded Peripherals</strong>
+              <p>Wireless mice, mouse pads, keyboard sets — ideal for work-from-home gift packs.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div>
+              <strong>Phone Accessories</strong>
+              <p>Branded PopSockets, phone stands, ring holders, and wireless charging pads.</p>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="ti-icon"><i class="fa-solid fa-wifi"></i></div>
+            <div>
+              <strong>Branded Hubs &amp; Cables</strong>
+              <p>USB hubs, branded cables, and charging stations for conferences and offices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT MERCHANDISE -->
+<section class="event-section">
+  <div class="blob blob--4"></div>
+  <div class="container position-relative z-2">
+    <div class="text-center mb-5">
+      <div class="badge-pill mb-3">04 — Event Merchandise</div>
+      <h2 class="section-title">Own the <span class="text-gradient-pink">Event</span></h2>
+      <p class="section-sub mx-auto">From conferences to product launches — branded event merchandise that turns every attendee into a brand ambassador.</p>
+    </div>
+    <div class="row gy-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="event-card">
+          <i class="fa-solid fa-ticket"></i>
+          <h6>Conference Packs</h6>
+          <p>Branded bags, notebooks, pens, lanyards, and name badge holders — all in one pack.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="event-card">
+          <i class="fa-solid fa-ruler-vertical"></i>
+          <h6>Event Banners</h6>
+          <p>Pull-up banners, step-and-repeat walls, table runners, and printed backdrops.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="event-card">
+          <i class="fa-solid fa-tag"></i>
+          <h6>Lanyards &amp; Badges</h6>
+          <p>Full-colour sublimated lanyards, retractable reels, and printed name badges.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="event-card">
+          <i class="fa-solid fa-star"></i>
+          <h6>Award Trophies</h6>
+          <p>Branded acrylic, glass, and crystal awards for staff recognition and industry events.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container position-relative z-2 text-center">
+    <h2 class="cta-title">Ready to Promote Your Brand?</h2>
+    <p class="cta-sub mt-3">Get a custom quote for any quantity. Samples available on request.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+      <a href="{{ url_for('contact') }}" class="btn-primary-glow">Get a Free Quote</a>
+      <a href="{{ url_for('branding') }}" class="btn-ghost">See Branding Services</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
