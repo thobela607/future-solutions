@@ -11,7 +11,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
@@ -38,7 +38,7 @@
           <li class="nav-item"><a class="nav-link {% if request.endpoint == 'promotional' %}active{% endif %}" href="{{ url_for('promotional') }}">Promotional</a></li>
           <li class="nav-item"><a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About</a></li>
           <li class="nav-item ms-lg-2">
-            <a class="btn-primary-glow px-4 py-2 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}" style="font-size:0.85rem;">Contact Us</a>
+            <a class="btn btn-accent px-4 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact Us</a>
           </li>
         </ul>
       </div>
