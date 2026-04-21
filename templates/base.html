@@ -33,6 +33,7 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item"><a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Home</a></li>
           <li class="nav-item"><a class="nav-link {% if request.endpoint == 'products' %}active{% endif %}" href="{{ url_for('products') }}">Products</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'stationery' %}active{% endif %}" href="{{ url_for('stationery') }}">Stationery</a></li>
           <li class="nav-item"><a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About</a></li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-accent px-4 {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact Us</a>
@@ -89,6 +90,7 @@
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('about') }}">About Us</a></li>
             <li><a href="{{ url_for('products') }}">Products</a></li>
+            <li><a href="{{ url_for('stationery') }}">Stationery</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
           </ul>
         </div>

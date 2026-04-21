@@ -18,6 +18,11 @@ def products():
     return render_template('products.html')
 
 
+@app.route('/stationery')
+def stationery():
+    return render_template('stationery.html')
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
